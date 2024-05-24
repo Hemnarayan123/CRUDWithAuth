@@ -10,10 +10,13 @@ router.post("/login", userLogin)
 //.........................................................................................................
 
 const todo = express.Router();
-import {addTodo} from '../controllers/todo.controllers.js';
+import {addTodo,updateTodo, deleteTodo, getTodos} from '../controllers/todo.controllers.js';
 
 
 todo.post('/add-todos', addTodo);
+todo.put('/update-todos/:id', updateTodo);
+todo.delete('/delete-todos/:id', deleteTodo);
+todo.get('/get-todos/:id', getTodos);
 
 
 export {router, todo}
