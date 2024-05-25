@@ -27,8 +27,12 @@ const userSchema = new mongoose.Schema(
       type : mongoose.Types.ObjectId,
       ref: "List"
       }
-    ]
+    ],
+    token:{
+      type : String,
+    }
   },
+  
   { timestamps: true }
 );
 

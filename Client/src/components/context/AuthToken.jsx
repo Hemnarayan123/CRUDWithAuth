@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
+import { ToastBar, toast } from "react-hot-toast";
 
 export const AuthContext = createContext();
 
@@ -8,6 +9,9 @@ export const AuthProvider = ({ children }) => {
   const tokenGetLocalStorage = (serverToken) => {
     localStorage.setItem("token", serverToken);
     setToken(serverToken);
+    // toast.success("Sign In Success", {
+    //   duration: 3000,
+    // });
   };
 
   const isSignIn = !!token;
@@ -15,6 +19,9 @@ export const AuthProvider = ({ children }) => {
   const SignoutUser = () => {
     localStorage.removeItem("token");
     setToken(null);
+    toast.error("You have been logged out",{
+        duration: 3000,
+      });
   };
 
   return (
