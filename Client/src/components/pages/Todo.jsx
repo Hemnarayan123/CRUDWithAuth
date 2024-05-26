@@ -61,7 +61,7 @@ function Todo() {
     if (token) {
       try {
         await axios
-          .post("http://localhost:8000/api/v2/add-todos", itemAdd, {
+          .post(`http://localhost:8000/api/v2/add-todos`, itemAdd, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
