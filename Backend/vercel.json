@@ -1,12 +1,28 @@
 {
     "version": 2,
-    "build": [
-        {"src": "*.js", "use": "@vercel/node"}
+    "builds": [
+        {
+            "src": "index.js",
+            "use": "@vercel/node"
+        }
     ],
     "routes": [
         {
-         "src": "/(.*)",
-         "dest": "/"
+            "src": "/(.*)",
+            "dest": "/"
         }
-    ]
+    ],
+    "env": {
+        "NODE_ENV": "production",
+        "API_KEY": "your_api_key"
+    },
+    "ignore": [
+        "node_modules",
+        ".git"
+    ],
+    "functions": {
+        "api/**/*.js": {
+            "runtime": "nodejs14.x"
+        }
+    }
 }
