@@ -29,9 +29,9 @@ function ResetPassword() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-800">
-    <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-      <h2 className="text-2xl font-semibold text-center text-gray-800">Reset Password</h2>
+    <div className="flex items-center justify-center min-h-screen rgb(25, 22, 22)">
+    <div className="bg-gray-600 p-8 rounded-lg shadow-md w-full max-w-md">
+      <h2 className="text-2xl font-semibold text-center text-gray-100">Reset Password</h2>
       <form onSubmit={handleSubmit} className="mt-6">
         <div className="mb-4">
           <label htmlFor="password" className="block text-sm font-medium text-gray-700">
@@ -47,9 +47,14 @@ function ResetPassword() {
             required
           />
         </div>
-        <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700">
-          Update Password
-        </button>
+        <div className="flex items-center justify-center">
+            <button
+              type="submit"
+              className="p-4 bg-gray-100   text-gray-900 font-bold py-2 rounded hover:bg-gray-300 transition duration-300"
+            >
+              Update password
+            </button>
+          </div>
       </form>
     </div>
   </div>
