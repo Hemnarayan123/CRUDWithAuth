@@ -1,28 +1,10 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "index.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
-    ],
-    "env": {
-        "NODE_ENV": "production",
-        "API_KEY": "your_api_key"
-    },
-    "ignore": [
-        "node_modules",
-        ".git"
-    ],
-    "functions": {
-        "api/**/*.js": {
-            "runtime": "nodejs14.x"
-        }
-    }
+   "version": 2,
+   "name": "todo",
+   "builds": [
+      { "src": "app.js", "use": "@vercel/node" }
+   ],
+   "routes": [
+      { "src": "/(.*)", "dest": "/app.js" }
+   ]
 }
