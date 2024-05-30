@@ -1,7 +1,6 @@
 import MongoDB from "./db/index.js";
 import dotenv from 'dotenv'
 import { app } from "./app.js";
-import { modelNames } from "mongoose";
 
 dotenv.config()
 

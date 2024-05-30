@@ -86,12 +86,15 @@ function SignIn() {
             <span>{showPassword ? <RiEyeLine /> : <RiEyeCloseLine />}</span>
           </div>
         </div>
+        <Link to="/forget_password" className="text-gray-100  hover:underline">
+              Forget Password
+            </Link>
         <div className="flex items-center justify-center">
             <button
               type="submit"
               className="p-4 bg-gray-100   text-gray-900 font-bold py-2 rounded hover:bg-gray-300 transition duration-300"
             >
-              Signup
+              SignIn
             </button>
           </div>
         <div className="mt-4">

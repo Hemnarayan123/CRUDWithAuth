@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema(
     ],
     token:{
       type : String,
-    }
+    },
   },
   
   { timestamps: true }
