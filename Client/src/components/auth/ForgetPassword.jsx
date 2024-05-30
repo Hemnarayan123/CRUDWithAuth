@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthToken';
+import { ToastBar, toast } from 'react-hot-toast';
 
 function ForgetPassword() {
   const [email, setEmail] = useState('')
@@ -20,7 +21,10 @@ function ForgetPassword() {
       
 
       if (res.data && res.data.Status === "Success") {
-        navigate(`/signin`);
+        toast.success("Email send for Reset Password Successfully", {
+          duration: 3000,
+        });
+        navigate(`/email_confirmation`);
       } else {
         console.log("Error: Response status is not success");
       }
@@ -29,30 +33,30 @@ function ForgetPassword() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
-      <div className="bg-white p-3 rounded w-25">
-        <h4>Forgot Password</h4>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="email">
-              <strong>Email</strong>
-            </label>
-            <input
-              type="email"
-              placeholder="Enter Email"
-              autoComplete="off"
-              name="email"
-              className="form-control rounded-0"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <button type="submit" className="btn btn-success w-100 rounded-0">
-            Send
-          </button>
-        </form>
-      </div>
+    <div className="flex items-center justify-center min-h-screen bg-gray-800">
+    <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <h2 className="text-2xl font-semibold text-center text-gray-800">Forgot Password</h2>
+      <form onSubmit={handleSubmit} className="mt-6">
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700">
+          Send Reset Link
+        </button>
+      </form>
     </div>
+  </div>
   );
 }
 

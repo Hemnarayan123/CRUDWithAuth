@@ -7,8 +7,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import SignOut from './components/auth/SignOut'
 import Todo from './components/pages/Todo'
 import ForgetPassword from './components/auth/ForgetPassword'
-// import OTPVerification from './components/auth/OTPVerification'
 import ResetPassword from './components/auth/ResetPassword'
+import EmailConfirmation from './components/pages/EmailConfirmation'
 
 function App() {
 
@@ -23,15 +23,9 @@ function App() {
    <Route path="/signout" element={<SignOut/>}/>
    <Route path="/todo" element={<Todo/>}/>
    <Route path="/forget_password" element={<ForgetPassword/>}/>
-   {/* <Route path="/otp_verification" element={<OTPVerification/>}/> */}
    <Route path="/reset_password/:id/:token" element={<ResetPassword/>}/>
-
-
-
-
+   <Route path="/email_confirmation" element={<EmailConfirmation/>}/>
    </Routes>
-   
-   
    </BrowserRouter>
 </>
   )
