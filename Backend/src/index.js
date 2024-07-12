@@ -4,7 +4,7 @@ import { app } from "./app.js";
 
 dotenv.config()
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8000
 
 MongoDB().then(()=> {
     app.listen(PORT, () => {
